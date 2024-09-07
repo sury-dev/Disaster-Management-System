@@ -9,7 +9,8 @@ export default {
         'light-purple': '#EEE2F3',
       },
       fontFamily: {
-        suse: ['Raleway']
+        suse: ['Raleway', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif']
       }
     },
   },

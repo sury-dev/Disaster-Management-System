@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=SUSE:wght@100..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=SUSE:wght@100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    background: red;
+  }
+  to {
+    background-color: rgb(186, 48, 48);
+  }
+}
+
+header h1 i {
+  animation: spin infinite 2s linear;
+}
+
+#panic {
+  animation: blink infinite 500ms;
+}
+
+#chatbot-chat {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#chatbot-chat::-webkit-scrollbar {
+  display: none;
+}

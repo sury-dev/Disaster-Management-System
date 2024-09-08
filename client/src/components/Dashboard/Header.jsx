@@ -27,7 +27,7 @@ export default function Header() {
 
       <nav className="p-8 z-20 fixed top-0 right-0 bottom-0 w-[90%] sm:w-[60%] lg:hidden h-[100vh] bg-dark-purple text-white text-right text-4xl border-white">
         <button onClick={() => setIsOpenSidebar(false)} className="text-right hover:scale-110 duration-100">
-          <i class="fa-solid fa-xmark"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
         <div className="mt-8 flex flex-col gap-8 text-left">
           <Link route="#contact">Contact</Link>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Circle, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import axios from 'axios';
@@ -12,22 +12,29 @@ const customIcon = new L.Icon({
   popupAnchor: [0, -30],
 });
 
-// Component to Recenter Map
-function RecenterMap({ position, zoomLevel }) {
+// Custom component to recenter map on position change
+function RecenterMapToPosition({ position, isLiveLocationActive, manualUpdate, zoomLevel }) {
   const map = useMap();
+
   useEffect(() => {
-    map.setView(position, zoomLevel); // Set zoom level
-  }, [position, zoomLevel, map]);
+    if (isLiveLocationActive || manualUpdate) {
+      map.setView(position, zoomLevel); // Recenter the map with specified zoom
+    }
+  }, [position, isLiveLocationActive, manualUpdate, zoomLevel, map]);
+
   return null;
 }
 
 function MapComponent() {
   const [livePosition, setLivePosition] = useState([51.505, -0.09]);
-  const [zoomLevel, setZoomLevel] = useState(13);
+  const [zoomLevel, setZoomLevel] = useState(13); // Default zoom level
   const [alertTriggered, setAlertTriggered] = useState(null);
   const [testLat, setTestLat] = useState('');
   const [testLon, setTestLon] = useState('');
   const [markedZones, setMarkedZones] = useState([]);
+  const [isLiveLocationActive, setIsLiveLocationActive] = useState(true); // Track live location status
+  const [manualUpdate, setManualUpdate] = useState(false); // Track manual update status
+  const watchIdRef = useRef(null); // Store the geolocation watcher ID
 
   useEffect(() => {
     // Fetch zones from the backend
@@ -41,7 +48,6 @@ function MapComponent() {
           riskLevel: zone.riskLevel,
           color: zone.color && /^#([0-9A-F]{3}){1,2}$/i.test(zone.color) ? zone.color : '#0000ff' // Validate color
         }));
-        console.log('Fetched zones:', zones); // Log the sanitized data
         setMarkedZones(zones);
       })
       .catch((error) => {
@@ -50,16 +56,9 @@ function MapComponent() {
   }, []);
 
   useEffect(() => {
-    // Fetch live location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        setLivePosition([latitude, longitude]);
-        setTestLat(latitude.toFixed(6));
-        setTestLon(longitude.toFixed(6));
-      });
-
-      navigator.geolocation.watchPosition((position) => {
+    if (navigator.geolocation && isLiveLocationActive) {
+      // Watch position
+      watchIdRef.current = navigator.geolocation.watchPosition((position) => {
         const { latitude, longitude } = position.coords;
         setLivePosition([latitude, longitude]);
         setTestLat(latitude.toFixed(6));
@@ -67,7 +66,14 @@ function MapComponent() {
         checkUserInZone(latitude, longitude);
       });
     }
-  }, []);
+
+    // Cleanup the geolocation watcher when the component unmounts or live location is disabled
+    return () => {
+      if (watchIdRef.current) {
+        navigator.geolocation.clearWatch(watchIdRef.current);
+      }
+    };
+  }, [isLiveLocationActive]);
 
   const checkUserInZone = (lat, lon) => {
     const userLatLng = L.latLng(lat, lon);
@@ -92,6 +98,11 @@ function MapComponent() {
 
     if (!isNaN(lat) && !isNaN(lon)) {
       setLivePosition([lat, lon]);
+      setIsLiveLocationActive(false); // Disable live location updates
+      setManualUpdate(true); // Trigger manual update status
+      if (watchIdRef.current) {
+        navigator.geolocation.clearWatch(watchIdRef.current); // Stop live location watching
+      }
       checkUserInZone(lat, lon);
     } else {
       alert('Please enter valid latitude and longitude.');
@@ -99,29 +110,28 @@ function MapComponent() {
   };
 
   const relocateToLiveLocation = () => {
+    setIsLiveLocationActive(true); // Enable live location updates
+    setManualUpdate(false); // Reset manual update status
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          console.log("Latitude: " + latitude + ", Longitude: " + longitude);
           setLivePosition([latitude, longitude]);
-          setZoomLevel(13); // Optional: reset zoom level
+          setZoomLevel(15); // Adjust zoom level when relocating to live location
         },
         (error) => {
-          // Handle geolocation errors
           console.error("Error fetching geolocation: ", error.message);
           alert("Failed to retrieve live location. Please check permissions and try again.");
         }
       );
     } else {
-      console.error("Geolocation is not supported by this browser.");
       alert("Geolocation is not supported by your browser.");
     }
   };
 
   return (
     <div>
-      <div className="controls">
+      {/* <div className="controls">
         <input
           type="text"
           id="lat"
@@ -137,15 +147,30 @@ function MapComponent() {
           onChange={(e) => setTestLon(e.target.value)}
         />
         <button onClick={updateLocationManually}>Update Location Manually</button>
-        <button onClick={relocateToLiveLocation}>Relocate to Live Location</button> {/* New button added */}
-      </div>
-      <MapContainer center={livePosition} zoom={zoomLevel} style={{ height: '80vh', width: '100%' }}>
+        <button onClick={relocateToLiveLocation}>Relocate to Live Location</button>
+      </div> */}
+      <MapContainer
+        center={livePosition}
+        zoom={zoomLevel} // Use zoom level state directly
+        style={{ height: '80vh', width: '100%' }}
+        whenCreated={map => {
+          // Set initial view and zoom on first render
+          if (map && !isLiveLocationActive) {
+            map.setView(livePosition, zoomLevel);
+          }
+        }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="© OpenStreetMap contributors"
         />
         <Marker position={livePosition} icon={customIcon}></Marker>
-        <RecenterMap position={livePosition} zoomLevel={zoomLevel} />
+        <RecenterMapToPosition
+          position={livePosition}
+          isLiveLocationActive={isLiveLocationActive}
+          manualUpdate={manualUpdate} // Pass manual update status
+          zoomLevel={zoomLevel} // Pass zoom level
+        />
         {Array.isArray(markedZones) && markedZones.map((zone, index) => (
           <Circle
             key={index}

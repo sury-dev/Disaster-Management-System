@@ -1,18 +1,30 @@
 export default function Footer() {
   return (
     <section className="py-4 px-8 h-3/4 grid grid-cols-3 gap-4 mt-4">
-      <a className="flex justify-between border border-dark-purple-x rounded-3xl items-center font-bold p-8 box-border cursor-pointer text-right py-4 text-dark-purple text-3xl group">
+      <a className="flex gap-8 border-2 border-dark-purple-x rounded-3xl items-center p-8 box-border cursor-pointer py-4 bg-white text-dark-purple group">
         <i className="fas fa-exclamation-triangle mr-2 text-[#FF6347] text-6xl group-hover:scale-110 duration-100"></i>
-        <span>Report A Disaster</span>
+        <div>
+          <p className="text-3xl">Report A Disaster</p>
+          <p className="text-xl text-dark-purple-x">Update us about disaster near you</p>
+        </div>
       </a>
-      <a className="flex justify-between border border-dark-purple-x rounded-3xl items-center font-bold p-8 box-border cursor-pointer text-right py-4 text-dark-purple text-3xl group">
+      <a className="flex gap-8 border-2 border-dark-purple-x rounded-3xl items-center p-8 box-border cursor-pointer py-4 bg-white text-dark-purple group">
         <i className="fas fa-list mr-2 text-[#1E90FF] text-6xl group-hover:scale-110 duration-100"></i>
-        <span>Alert List</span>
+        <div>
+          <p className="text-3xl">Alert List</p>
+          <p className="text-xl text-dark-purple-x">Get updates on Indian Disasters</p>
+        </div>
       </a>
 
-      <a className="flex justify-between border border-dark-purple-x rounded-3xl items-center font-bold p-8 box-border cursor-pointer text-right py-4 text-dark-purple text-3xl group">
+      <a className="flex gap-8 border-2 border-dark-purple-x rounded-3xl items-center p-8 box-border cursor-pointer py-4 bg-white text-dark-purple group">
         <i className="fas fa-hands-helping mr-2 text-[#FFD700] text-6xl group-hover:scale-110 duration-100"></i>
-        <span>Rescue Together</span>
+        <div>
+          <p className="text-3xl mb-2">Rescue Together</p>
+          <p className="text-xl text-dark-purple-x">
+            <button className="bg-dark-purple hover:bg-dark-purple-x text-white rounded-lg px-4 py-1 mr-4">Volunteer</button>
+            <button className="bg-dark-purple hover:bg-dark-purple-x text-white rounded-lg px-4 py-1">Donate</button>
+          </p>
+        </div>
       </a>
     </section>
   );

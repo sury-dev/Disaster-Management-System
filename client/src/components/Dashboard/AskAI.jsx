@@ -17,47 +17,51 @@ export default function AskAI({ open, closeModal }) {
       onClose={closeModal}
       className="w-3/4 md:w-1/2 lg:w-1/4 bg-light-purple h-[80%] z-10 mx-0 mt-0 fixed top-12 left-12 lg:left-28 rounded-3xl outline-none border-2 border-dark-purple backdrop:bg-black backdrop:opacity-50"
     >
+      
+      <button
+          className="fixed left-10 z-20 rounded-full w-16 h-16 bg-dark-purple border hover:scale-110 duration-75 text-white text-2xl"
+          onClick={closeModal}
+        >
+          X
+        </button>
       <section
         id="chat"
-        className="h-full w-full flex p-4 flex-col justify-between gap-4"
+        className="relative h-full w-full flex p-4 flex-col justify-between gap-4"
       >
-        <p id="chatbot-chat" className="w-full text-dark-purple-x border border-dark-purple p-6 flex-1 rounded-3xl">
+
+        <p
+          id="chatbot-chat"
+          className="w-full text-dark-purple-x border border-dark-purple p-6 flex-1 rounded-3xl"
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
           quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
           suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+          repudiandae quos. Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Vero quisquam laboriosam ea inventore molestias. Nemo amet quis
+          incidunt suscipit, vero dolores in id rem porro inventore, odio
+          recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          Nemo amet quis incidunt suscipit, vero dolores in id rem porro
+          inventore, odio recusandae repudiandae quos. Lorem ipsum dolor sit,
+          amet consectetur adipisicing elit. Vero quisquam laboriosam ea
+          inventore molestias. Nemo amet quis incidunt suscipit, vero dolores in
+          id rem porro inventore, odio recusandae repudiandae quos. Lorem ipsum
+          dolor sit, amet consectetur adipisicing elit. Vero quisquam laboriosam
+          ea inventore molestias. Nemo amet quis incidunt suscipit, vero dolores
+          in id rem porro inventore, odio recusandae repudiandae quos. Lorem
+          ipsum dolor sit, amet consectetur adipisicing elit. Vero quisquam
+          laboriosam ea inventore molestias. Nemo amet quis incidunt suscipit,
+          vero dolores in id rem porro inventore, odio recusandae repudiandae
+          quos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
           quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
           suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos.
+          repudiandae quos. Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Vero quisquam laboriosam ea inventore molestias. Nemo amet quis
+          incidunt suscipit, vero dolores in id rem porro inventore, odio
+          recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          Nemo amet quis incidunt suscipit, vero dolores in id rem porro
+          inventore, odio recusandae repudiandae quos.
         </p>
         <p className="w-full bg-dark-purple border border-dark-purple-x rounded-2xl flex items-center">
           <input

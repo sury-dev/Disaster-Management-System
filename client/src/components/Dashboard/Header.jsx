@@ -5,8 +5,13 @@ export default function Header() {
 
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
+  let styles = 'hidden';
+  if (isOpenSidebar) {
+    styles = 'block';
+  }
+
   return (
-    <header className="py-4 px-8 flex border justify-between items-center">
+    <header className="pt-4 pb-2 px-8 flex border justify-between items-center">
       <h1 className="text-5xl text-center text-dark-purple font-bold">
         <i className="fas fa-map-marker-alt text-[#FF4500] mr-2"></i>
         <span>GeoAlert</span>
@@ -25,7 +30,7 @@ export default function Header() {
         </button>
       </nav>
 
-      <nav className="p-8 z-20 fixed top-0 right-0 bottom-0 w-[90%] sm:w-[60%] lg:hidden h-[100vh] bg-dark-purple text-white text-right text-4xl border-white">
+      <nav style={{ zIndex: 1000 }} className={`${styles} p-8 fixed top-0 right-0 bottom-0 w-[90%] sm:w-[60%] h-[100vh] bg-dark-purple text-white text-right text-4xl border-white`}>
         <button onClick={() => setIsOpenSidebar(false)} className="text-right hover:scale-110 duration-100">
           <i className="fa-solid fa-xmark"></i>
         </button>

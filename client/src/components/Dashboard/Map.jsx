@@ -1,5 +1,6 @@
 import MapComponent from "../MapComponent";
 import Button from "./UI/Button";
+import ZonesNav from "./ZonesNav";
 export default function Map() {
   return (
     <section
@@ -11,14 +12,7 @@ export default function Map() {
         style={{ zIndex: 990 }}
         className="w-1/4 absolute bottom-4 right-4 flex flex-col gap-2"
       >
-        <span className="flex items-center justify-end">
-          <Button classes="mr-2 lg:mr-4 text-nowrap">
-            Zones <i className="fa-solid fa-caret-up ml-1 lg:ml-2"></i>
-          </Button>
-          <Button styles={{ zIndex: 999 }} classes="xl:hidden">
-            <i className="fa-solid fa-plus"></i>
-          </Button>
-        </span>
+        <ZonesNav />
         <button
           id="panic"
           className="w-full bg-red-600 hover:bg-red-700 text-center py-2 text-white text-2xl rounded-2xl"

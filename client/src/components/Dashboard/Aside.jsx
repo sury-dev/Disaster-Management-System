@@ -8,48 +8,49 @@ export default function Aside() {
         id="chat"
         className="w-full h-full flex flex-col justify-between gap-4"
       >
-        <p
-          id="chatbot-chat"
-          className="w-full bg-white text-dark-purple-x overflow-y-auto border-2 border-dark-purple-x p-6 flex-1 rounded-3xl"
-        >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos. Lorem ipsum dolor sit, amet consectetur adipisicing
-          elit. Vero quisquam laboriosam ea inventore molestias. Nemo amet quis
-          incidunt suscipit, vero dolores in id rem porro inventore, odio
-          recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
-          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
-          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
-          Nemo amet quis incd rem porro
-          inventore, odio recusandae repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inven
-          inventore, odio recusandae repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inven
-          suscipit, vero dolores in id rem porro inventore, odio recusandae
-          repudiandae quos. Lorem ipsum dolor sit, amet consectetur adipisicing
-          elit. Vero quisquam laboriosam ea inventore molestias. Nemo amet quis
-          incidunt suscipit, vero dolores in id rem porro inventore, odio
-          recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
-          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
-          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
-          Nemo amet quis incd rem porro
-          inventore, odio recusandae repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inven
-          inventore, odio recusandae repudiandae quos.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
-          suscipit, vero dolores in id rem porro inven
-          
-        </p>
+        <section className="w-full h-[88%] flex flex-col justify-between bg-white border-2 border-dark-purple-x p-6 flex-1 rounded-3xl">
+          <h2 className="text-4xl text-dark-purple-x mb-4">
+            SachetakAI
+          </h2>
+          <p
+            id="chatbot-chat"
+            className="w-full text-dark-purple-x"
+          >
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+            quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
+            suscipit, vero dolores in id rem porro inventore, odio recusandae
+            repudiandae quos. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+            Nemo amet quis incidunt suscipit, vero dolores in id rem porro
+            inventore, odio recusandae repudiandae quos. Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Vero quisquam laboriosam ea
+            inventore molestias. adipisicing elit. Vero quisquam laboriosam ea
+            inventore molestias. adipisicing elit. Vero quisquam laboriosam ea
+            inventore molestias. Nemo amet quis incd rem porro inventore, odio
+            recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+            Nemo amet quis incidunt suscipit, vero dolores in id rem porro inven
+            inventore, odio recusandae repudiandae quos. Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Vero quisquam laboriosam ea
+            inventore molestias. Nemo amet quis incidunt suscipit, vero dolores
+            in id rem porro inven suscipit, vero dolores in id rem porro
+            inventore, odio recusandae repudiandae quos. Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Vero quisquam laboriosam ea
+            inventore molestias. Nemo amet quis incidunt suscipit, vero dolores
+            in id rem porro inventore, odio recusandae repudiandae quos. Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. Vero quisquam
+            laboriosam ea inventore molestias. adipisicing elit. Vero quisquam
+            laboriosam ea inventore molestias. adipisicing elit. Vero quisquam
+            laboriosam ea inventore molestias. Nemo amet quis incd rem porro
+            inventore, odio recusandae repudiandae quos. Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Vero quisquam laboriosam ea
+            inventore molestias. Nemo amet quis incidunt suscipit, vero dolores
+            in id rem porro inven inventore, odio recusandae repudiandae quos.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+            quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
+            suscipit, vero dolores in id rem porro inven
+          </p>
+        </section>
         <p className="w-full bg-dark-purple border border-dark-purple-x rounded-2xl flex items-center">
           <input
             type="text"

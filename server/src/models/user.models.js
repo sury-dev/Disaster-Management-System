@@ -10,10 +10,20 @@ const userSchema = mongoose.Schema({
         unique : true,
         index : true
     },
+    alternateEmail :{
+        type : String,
+        required : false,
+        lowercase : true,
+        trim : true
+    },
     fullName :{
         type : String,
         required : true,
         trim : true,
+    },
+    dateOfBirth:{
+        type : Date,
+        required : true
     },
     profilePicture : {
         type : String,
@@ -23,6 +33,22 @@ const userSchema = mongoose.Schema({
     password : {
         type : String,
         required : [true , "Password is required"]
+    },
+    phoneNumber : {
+        type : Number,
+        required : true
+    },
+    alternatePhoneNumber : {
+        type : Number,
+        required : true
+    },
+    latitude:{
+        type: Number,
+        required: false
+    },
+    longitude:{
+        type: Number,
+        required: false
     },
     refreshToken : {
         type : String

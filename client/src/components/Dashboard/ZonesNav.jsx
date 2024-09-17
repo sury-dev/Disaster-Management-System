@@ -20,7 +20,7 @@ function ZonesNav() {
             return (
               <li
                 key={zone}
-                className="border-b border-dark-purple hover:border-b hover:border-white"
+                className="text-nowrap border-b border-dark-purple hover:border-b hover:border-white"
               >
                 <button>{zone}</button>
               </li>

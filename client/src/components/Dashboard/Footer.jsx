@@ -2,7 +2,7 @@ import Button from "./UI/Button";
 
 export default function Footer() {
   return (
-    <section className="py-4 px-8 h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
+    <section className="py-4 px-8 h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:mt-4">
       <a className="flex gap-8 border-2 border-dark-purple-x rounded-3xl items-center p-8 box-border cursor-pointer py-4 bg-white text-dark-purple group">
         <i className="fas fa-exclamation-triangle mr-2 text-[#FF6347] text-6xl group-hover:scale-110 duration-100"></i>
         <div>

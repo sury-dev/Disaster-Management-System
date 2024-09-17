@@ -44,7 +44,3 @@ header h1 i {
 .leaflet-control-zoom{
   display: none;
 }
-
-#map{
-  height: 100%;
-}

@@ -12,7 +12,7 @@ function UserDashboard() {
     <>
       <Header />
       <AskAI open={chatIsOpen} closeModal={() => setChatIsOpen(false)} />
-      <main className="mt-4 px-8 flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-0">
+      <main className="max-h-screen mt-4 px-8 flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-0">
         <Map />
         <Aside />
         <button

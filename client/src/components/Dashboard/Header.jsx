@@ -19,7 +19,7 @@ export default function Header() {
       <nav className="hidden lg:block">
         <Link route="#contact">Contact</Link>
         <Link route="#guide">Guide</Link>
-        <Link route="#blog">Blog</Link>
+        <Link route="/user/blog">Blog</Link>
         <Link route="#about">About</Link>
         <Link route="#profile">Profile</Link>
       </nav>
@@ -37,7 +37,7 @@ export default function Header() {
         <div className="mt-8 flex flex-col gap-8 text-left">
           <Link route="#contact">Contact</Link>
           <Link route="#guide">Guide</Link>
-          <Link route="#blog">Blog</Link>
+          <Link route="/user/blog">Blog</Link>
           <Link route="#about">About</Link>
           <Link route="#profile">Profile</Link>
         </div>

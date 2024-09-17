@@ -50,6 +50,10 @@ const userSchema = mongoose.Schema({
         type: Number,
         required: false
     },
+    gender:{
+        type : String,
+        required : true
+    },
     refreshToken : {
         type : String
     }

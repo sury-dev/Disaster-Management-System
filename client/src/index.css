@@ -23,7 +23,7 @@
   }
 }
 
-header h1 i {
+#logo-spin {
   animation: spin infinite 2s linear;
 }
 

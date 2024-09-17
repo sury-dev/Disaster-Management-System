@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="pt-4 pb-2 px-8 flex justify-between items-center">
       <h1 className="text-5xl text-center text-dark-purple font-bold">
-        <i className="fas fa-map-marker-alt text-[#FF4500] mr-2"></i>
+        <i id="icon-spin" className="fas fa-map-marker-alt text-[#FF4500] mr-2"></i>
         <span>GeoAlert</span>
       </h1>
       <nav className="hidden lg:block">

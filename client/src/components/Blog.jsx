@@ -7,14 +7,14 @@ function Blog() {
     <main className="w-full min-h-screen pb-16 mb-0">
       <header className="px-16 my-8 flex justify-between items-center">
         <div id="blog-heading">
-          <h2 className="text-5xl font-bold text-dark-purple mb-2">GeoLog</h2>
+          <h2 className="text-5xl font-bold text-dark-purple mb-2 flex gap-4 items-center"><span><i id="logo-spin" className="fa-solid fa-history text-5xl text-yellow-500"></i></span><span>GeoLog</span></h2>
           <p className="text-xl text-gray-500">
             Strategies for Effective Disaster Management
           </p>
         </div>
         <div className="flex items-center">
             <input type="text" placeholder="Search" className="h-12 p-4 text-xl outline-dark-purple" />
-            <i className="fa fa-user ml-4 text-2xl text-dark-purple border-2 border-dark-purple hover:border-dark-purple-x hover:text-dark-purple-x duration-100 w-12 h-12 rounded-full grid place-items-center" aria-hidden="true"></i>
+            <i className="fa-solid fa-circle-user ml-2 text-4xl text-dark-purple hover:text-dark-purple-x duration-100 w-12 h-12 grid place-items-center"></i>
         </div>
       </header>
       <ul className="w-full flex flex-wrap gap-4 justify-center">

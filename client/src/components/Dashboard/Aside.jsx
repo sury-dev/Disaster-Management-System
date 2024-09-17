@@ -20,13 +20,35 @@ export default function Aside() {
           incidunt suscipit, vero dolores in id rem porro inventore, odio
           recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
           adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
           Nemo amet quis incd rem porro
           inventore, odio recusandae repudiandae quos.
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
           quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
+          suscipit, vero dolores in id rem porro inven
+          inventore, odio recusandae repudiandae quos.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
+          suscipit, vero dolores in id rem porro inven
           suscipit, vero dolores in id rem porro inventore, odio recusandae
           repudiandae quos. Lorem ipsum dolor sit, amet consectetur adipisicing
-          elit. 
+          elit. Vero quisquam laboriosam ea inventore molestias. Nemo amet quis
+          incidunt suscipit, vero dolores in id rem porro inventore, odio
+          recusandae repudiandae quos. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          adipisicing elit. Vero quisquam laboriosam ea inventore molestias.
+          Nemo amet quis incd rem porro
+          inventore, odio recusandae repudiandae quos.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
+          suscipit, vero dolores in id rem porro inven
+          inventore, odio recusandae repudiandae quos.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+          quisquam laboriosam ea inventore molestias. Nemo amet quis incidunt
+          suscipit, vero dolores in id rem porro inven
+          
         </p>
         <p className="w-full bg-dark-purple border border-dark-purple-x rounded-2xl flex items-center">
           <input

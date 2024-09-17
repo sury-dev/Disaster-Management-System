@@ -15,7 +15,7 @@ export default function AskAI({ open, closeModal }) {
     <dialog
       ref={dialog}
       onClose={closeModal}
-      className="w-3/4 md:w-1/2 lg:w-1/4 bg-light-purple h-[80%] z-10 mx-0 mt-0 fixed top-12 left-12 lg:left-28 rounded-3xl outline-none border-2 border-dark-purple backdrop:bg-black backdrop:opacity-50"
+      className="w-3/4 md:w-1/2 lg:hidden bg-light-purple h-[80%] z-10 mx-0 mt-0 fixed top-12 left-12 rounded-3xl outline-none border-2 border-dark-purple backdrop:bg-black backdrop:opacity-50"
     >
       
       <button

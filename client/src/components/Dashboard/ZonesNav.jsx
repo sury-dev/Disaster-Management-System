@@ -20,7 +20,7 @@ function ZonesNav() {
             return (
               <li
                 key={zone}
-                className="border-b border-dark-purple hover:border-b hover:border-white"
+                className="text-nowrap border-b border-dark-purple hover:border-b hover:border-white"
               >
                 <button>{zone}</button>
               </li>
@@ -39,7 +39,10 @@ function ZonesNav() {
         </div>
       </nav>
       <Button
-        onClick={() => setShowZones((prevState) => !prevState)}
+        onClick={() => {
+          setShowZones((prevState) => !prevState);
+          setShowNav(false);
+        }}
         classes="mr-2 lg:mr-4 text-nowrap"
       >
         Zones{" "}
@@ -50,7 +53,10 @@ function ZonesNav() {
         )}
       </Button>
       <Button
-        onClick={() => setShowNav((prevState) => !prevState)}
+        onClick={() => {
+          setShowNav((prevState) => !prevState);
+          setShowZones(false);
+        }}
         styles={{ zIndex: 999 }}
         classes="xl:hidden"
       >

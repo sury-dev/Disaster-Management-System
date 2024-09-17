@@ -6,7 +6,7 @@ export default function Map() {
     <section
       id="map"
       style={{ overflow: "hidden" }}
-      className="relative w-full lg:w-[70%] flex-grow h-[70%] border-2 border-dark-purple-x bg-white rounded-3xl mr-4"
+      className="relative w-full lg:w-[70%] h-[88%] lg:h-full border-2 border-dark-purple-x bg-white rounded-3xl mr-4"
     >
       <nav
         style={{ zIndex: 990 }}

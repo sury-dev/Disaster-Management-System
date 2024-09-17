@@ -1,3 +1,5 @@
+import Button from "./UI/Button";
+
 export default function Footer() {
   return (
     <section className="py-4 px-8 h-3/4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
@@ -20,9 +22,9 @@ export default function Footer() {
         <i className="fas fa-hands-helping mr-2 text-[#FFD700] text-6xl group-hover:scale-110 duration-100"></i>
         <div>
           <p className="text-3xl mb-2">Rescue Together</p>
-          <p className="text-xl text-dark-purple-x">
-            <button className="bg-dark-purple hover:bg-dark-purple-x text-white rounded-lg px-4 py-1 mr-4">Volunteer</button>
-            <button className="bg-dark-purple hover:bg-dark-purple-x text-white rounded-lg px-4 py-1">Donate</button>
+          <p className="text-xl text-dark-purple-x flex">
+            <Button>Volunteer</Button>
+            <Button>Donate</Button>
           </p>
         </div>
       </a>

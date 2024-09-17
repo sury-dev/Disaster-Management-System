@@ -39,3 +39,12 @@ header h1 i {
 #chatbot-chat::-webkit-scrollbar {
   display: none;
 }
+
+
+.leaflet-control-zoom{
+  display: none;
+}
+
+#map{
+  height: 100%;
+}

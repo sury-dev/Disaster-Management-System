@@ -130,7 +130,7 @@ function MapComponent() {
   };
 
   return (
-    <div>
+    <div id='map'>
       {/* <div className="controls">
         <input
           type="text"

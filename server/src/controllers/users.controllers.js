@@ -9,8 +9,9 @@ const jwt = require("jsonwebtoken");
 const generateAccessAndRefreshTokens = async (userId) =>{
     try{
         const user = await User.findById(userId);
-        const accessToken = user.generateAccessToken();
-        const refreshToken = user.generateRefreshToken();
+        const accessToken = await user.generateAccessToken();
+        const refreshToken = await user.generateRefreshToken();
+        console.log(accessToken," ",refreshToken);
         user.refreshToken = refreshToken;
         await user.save({validateBeforeSave : false});
 
@@ -271,6 +272,15 @@ const updateProfilePicture = asyncHandler(async(req,res)=>{
         {new : true}
     ).select("-password");
 })
+
+const verifyToken = asyncHandler(async(req,res)=>{
+    res.status(200).json(
+        new ApiResponse(
+            200,
+            "Token Verified Successfully"
+        )
+    )
+})
 module.exports = {
     registerUser
     , loginUser
@@ -279,4 +289,5 @@ module.exports = {
     , changeCurrentPassword
     , getCurrentUser
     , updateAccountDetails
-    , updateProfilePicture};
+    , updateProfilePicture
+    , verifyToken};

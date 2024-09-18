@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Circle, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import axios from 'axios';
+import io from 'socket.io-client';
 import 'leaflet/dist/leaflet.css';
 
 // Custom Icon
@@ -35,6 +36,17 @@ function MapComponent() {
   const [isLiveLocationActive, setIsLiveLocationActive] = useState(true); // Track live location status
   const [manualUpdate, setManualUpdate] = useState(false); // Track manual update status
   const watchIdRef = useRef(null); // Store the geolocation watcher ID
+  const socket = useRef(null); // Store socket instance
+
+  useEffect(() => {
+    // Initialize Socket.IO connection
+    socket.current = io('http://localhost:5000'); // Update the backend server URL
+    return () => {
+      if (socket.current) {
+        socket.current.disconnect();
+      }
+    };
+  }, []);
 
   useEffect(() => {
     // Fetch zones from the backend
@@ -64,6 +76,9 @@ function MapComponent() {
         setTestLat(latitude.toFixed(6));
         setTestLon(longitude.toFixed(6));
         checkUserInZone(latitude, longitude);
+
+        // Send the live location to the admin dashboard via Socket.IO
+        socket.current.emit('user-location', { latitude, longitude });
       });
     }
 
@@ -104,6 +119,8 @@ function MapComponent() {
         navigator.geolocation.clearWatch(watchIdRef.current); // Stop live location watching
       }
       checkUserInZone(lat, lon);
+      // Send the manually updated location to the admin dashboard
+      socket.current.emit('user-location', { latitude: lat, longitude: lon });
     } else {
       alert('Please enter valid latitude and longitude.');
     }
@@ -131,7 +148,7 @@ function MapComponent() {
 
   return (
     <div id='map'>
-      {/* <div className="controls">
+      {<div className="controls">
         <input
           type="text"
           id="lat"
@@ -148,7 +165,7 @@ function MapComponent() {
         />
         <button onClick={updateLocationManually}>Update Location Manually</button>
         <button onClick={relocateToLiveLocation}>Relocate to Live Location</button>
-      </div> */}
+      </div>}
       <MapContainer
         center={livePosition}
         zoom={zoomLevel} // Use zoom level state directly
@@ -161,22 +178,18 @@ function MapComponent() {
         }}
       >
         <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="© OpenStreetMap contributors"
         />
-        <Marker position={livePosition} icon={customIcon}></Marker>
-        <RecenterMapToPosition
-          position={livePosition}
-          isLiveLocationActive={isLiveLocationActive}
-          manualUpdate={manualUpdate} // Pass manual update status
-          zoomLevel={zoomLevel} // Pass zoom level
-        />
-        {Array.isArray(markedZones) && markedZones.map((zone, index) => (
+        <Marker position={livePosition} icon={customIcon} />
+        <RecenterMapToPosition position={livePosition} isLiveLocationActive={isLiveLocationActive} manualUpdate={manualUpdate} zoomLevel={zoomLevel} />
+        {/* Displaying all the marked zones */}
+        {markedZones.map((zone, index) => (
           <Circle
             key={index}
             center={[zone.latitude, zone.longitude]}
             radius={zone.radius}
-            pathOptions={{ color: zone.color, fillColor: zone.color, fillOpacity: 0.5 }}
+            pathOptions={{ color: zone.color }}
           />
         ))}
       </MapContainer>

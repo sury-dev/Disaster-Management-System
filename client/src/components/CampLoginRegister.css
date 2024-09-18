@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.camp-container-camp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.form-container-camp {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #1e3c72;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #2a5298;
+    outline: none;
+}
+
+.submit-btn-camp {
+    background-color: #1e3c72;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn-camp:hover {
+    background-color: #2a5298;
+}
+
+.toggle-link-camp {
+    text-align: center;
+    color: #1e3c72;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.toggle-link-camp:hover {
+    text-decoration: underline;
+}

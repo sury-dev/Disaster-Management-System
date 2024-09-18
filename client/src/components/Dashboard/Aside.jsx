@@ -54,7 +54,7 @@ export default function Aside() {
     <aside id="help" className="hidden lg:block w-full lg:w-[28.5%] rounded-3xl">
       <section id="chat" className="w-full h-full flex flex-col justify-between gap-4">
         <section className="w-full h-[88%] flex flex-col justify-between bg-white border-2 border-dark-purple-x p-4 flex-1 rounded-3xl">
-          <h2 className="text-4xl text-dark-purple-x mb-4">SachetakAI</h2>
+          <h2 className="text-4xl text-dark-purple-x mb-4 pb-4 text-left border-b border-dark-purple">SachetakAI</h2>
           <div id="chatbot-chat" className="w-full text-dark-purple-x flex flex-col gap-4 overflow-y-auto">
             {messages.map((msg, index) => (
               <div
@@ -66,17 +66,17 @@ export default function Aside() {
             ))}
           </div>
         </section>
-        <form className="w-full bg-dark-purple border border-dark-purple-x rounded-2xl flex items-center" onSubmit={handleSubmit}>
+        <form className="w-full border-2 border-dark-purple-x rounded-2xl overflow-hidden flex flex-row" onSubmit={handleSubmit}>
           <input
             type="text"
             value={input}
             onChange={handleChange}
             placeholder="Ask me anything..."
-            className="h-12 w-[80%] text-black px-4 text-xl outline-none rounded-tl-2xl rounded-bl-2xl"
+            className="h-12 w-[80%] rounded-none text-black px-4 text-xl outline-none"
           />
           <button
             type="submit"
-            className="flex-1 rounded-tr-2xl rounded-br-2xl text-white text-2xl bg-dark-purple hover:bg-dark-purple-x h-full"
+            className="flex-1 rounded-none text-white text-2xl bg-dark-purple hover:bg-dark-purple-x h-full"
           >
             <i className="fa fa-angle-right" aria-hidden="true"></i>
           </button>

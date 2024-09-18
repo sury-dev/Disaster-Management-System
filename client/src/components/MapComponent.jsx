@@ -148,8 +148,9 @@ function MapComponent() {
 
   return (
     <div id='map'>
-      {<div className="controls">
+      <div style={{zIndex: 999}} className="absolute top-4 w-full h-8 controls px-8 flex gap-2">
         <input
+          className='p-4 border border-green-500'
           type="text"
           id="lat"
           placeholder="Latitude"
@@ -157,15 +158,16 @@ function MapComponent() {
           onChange={(e) => setTestLat(e.target.value)}
         />
         <input
+          className='p-4 border border-green-500'
           type="text"
           id="lon"
           placeholder="Longitude"
           value={testLon}
           onChange={(e) => setTestLon(e.target.value)}
         />
-        <button onClick={updateLocationManually}>Update Location Manually</button>
-        <button onClick={relocateToLiveLocation}>Relocate to Live Location</button>
-      </div>}
+        <button className='bg-green-600 hover:bg-green-700 text-white px-4 text-nowrap' onClick={updateLocationManually}>Update Location Manually</button>
+        <button className='bg-green-600 hover:bg-green-700 text-white px-4 text-nowrap' onClick={relocateToLiveLocation}>Relocate to Live Location</button>
+      </div>
       <MapContainer
         center={livePosition}
         zoom={zoomLevel} // Use zoom level state directly

@@ -59,7 +59,7 @@ export default function Aside() {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`rounded-lg p-4 w-2/3 ${msg.type === 'user' ? 'bg-purple-400 text-white self-start' : 'bg-dark-purple text-white self-end'}`}
+                className={`rounded-lg p-4 w-2/3 ${msg.type === 'user' ? 'bg-purple-500 text-white self-start' : 'bg-dark-purple text-white self-end'}`}
               >
                 {msg.text}
               </div>

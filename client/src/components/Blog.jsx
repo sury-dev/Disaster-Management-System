@@ -5,16 +5,28 @@ import { DISASTER_DATA } from "../disaster_blog";
 function Blog() {
   return (
     <main className="w-full min-h-screen pb-16 mb-0">
-      <header className="px-16 my-8 flex justify-between items-center">
+      <header className="px-16 my-8 flex flex-col lg:flex-row gap-8 lg:gap-0 lg:justify-between items-center">
         <div id="blog-heading">
-          <h2 className="text-5xl font-bold text-dark-purple mb-2 flex gap-4 items-center"><span><i id="logo-spin" className="fa-solid fa-history text-5xl text-yellow-500"></i></span><span>GeoLog</span></h2>
-          <p className="text-xl text-gray-500">
+          <h2 className="text-5xl font-bold text-dark-purple mb-2 flex gap-4 items-center">
+            <span>
+              <i
+                id="logo-spin"
+                className="fa-solid fa-history text-5xl text-yellow-500"
+              ></i>
+            </span>
+            <span>GeoLog</span>
+          </h2>
+          <p className="text-xl text-gray-500 hidden lg:block">
             Strategies for Effective Disaster Management
           </p>
         </div>
         <div className="flex items-center">
-            <input type="text" placeholder="Search" className="h-12 p-4 text-xl outline-dark-purple" />
-            <i className="fa-solid fa-circle-user ml-2 text-4xl text-dark-purple hover:text-dark-purple-x duration-100 w-12 h-12 grid place-items-center"></i>
+          <input
+            type="text"
+            placeholder="Search"
+            className="h-12 p-4 text-xl outline-dark-purple"
+          />
+          <i className="fa-solid fa-circle-user ml-2 text-4xl text-dark-purple hover:text-dark-purple-x duration-100 w-12 h-12 grid place-items-center"></i>
         </div>
       </header>
       <ul className="w-full flex flex-wrap gap-4 justify-center">

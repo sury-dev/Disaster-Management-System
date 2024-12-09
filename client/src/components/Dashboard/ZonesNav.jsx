@@ -22,7 +22,7 @@ function ZonesNav() {
                 key={zone}
                 className="text-nowrap border-b border-dark-purple hover:border-b hover:border-white"
               >
-                <button>{zone}</button>
+                <button className="hover:bg-dark-purple">{zone}</button>
               </li>
             );
           })}
